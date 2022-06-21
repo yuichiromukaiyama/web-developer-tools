@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Developer Tools</title>
+  </head>
+  <style>
+    .container {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .parent {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+
+    .item {
+      width: 400px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="item">
+        <h1 style="text-align: center">Web Tools</h1>
+      </div>
+      <div class="item">
+        <div class="parent">
+          <div style="flex-grow: 1">
+            <label style="margin-right: 50px">Color</label>
+            <input id="color" type="color" />
+          </div>
+          <div>
+            <span id="color_span">#000000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const obj = {
+        color: '#000000',
+      };
+
+      const colorElement = document.getElementById('color');
+      const colorSpanElement = document.getElementById('color_span');
+
+      colorElement.addEventListener('change', (e) => {
+        const value = e.currentTarget.value;
+        colorSpanElement.innerText = value;
+        colorSpanElement.style.color = value;
+      });
+    </script>
+  </body>
+</html>
